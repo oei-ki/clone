@@ -78,39 +78,39 @@ $(".btn").each(function(){
 actionBtn($(this))
 })
 
-let windowHeight = $(window).innerHeight();
-let direc = 0;
-let wheelAction = false;
-let maxDirec = $(".wheel-wrap section").length - 1;
-function aniH(){
-  $("html").animate({scrollTop:direc*windowHeight},{
-    duration: 1000,
-    start: function(){
-      wheelAction = true;
-    },
-    complete: function(){
-      wheelAction = false;
-    }
-  });
-};
-aniH();
-$(window).on('wheel',function(event){
-  let eventDelta = event.originalEvent.wheelDelta;
-  if(eventDelta > 0 && wheelAction == false){
-    if( direc <= 0 ){
-      direc = 0;
-    }else {
-      direc--
-      aniH()
-    }
-  }else if( eventDelta < 0 && wheelAction == false ){
-    if(direc >= maxDirec ){
-      direc = maxDirec;
-    }else {
-      direc++
-      aniH()
-    }
-  }
-});
+// let windowHeight = $(window).innerHeight();
+// let direc = 0;
+// let wheelAction = false;
+// let maxDirec = $(".wheel-wrap section").length - 1;
+// function aniH(){
+//   $("html").animate({scrollTop:direc*windowHeight},{
+//     duration: 1000,
+//     start: function(){
+//       wheelAction = true;
+//     },
+//     complete: function(){
+//       wheelAction = false;
+//     }
+//   });
+// };
+// aniH();
+// $(window).on('wheel',function(event){
+//   let eventDelta = event.originalEvent.wheelDelta;
+//   if(eventDelta > 0 && wheelAction == false){
+//     if( direc <= 0 ){
+//       direc = 0;
+//     }else {
+//       direc--
+//       aniH()
+//     }
+//   }else if( eventDelta < 0 && wheelAction == false ){
+//     if(direc >= maxDirec ){
+//       direc = maxDirec;
+//     }else {
+//       direc++
+//       aniH()
+//     }
+//   }
+// });
 
 });
